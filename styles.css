@@ -273,21 +273,24 @@ header .container {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: white;
-    position: absolute;
-    top: 60px;
-    right: 20px;
+    position: fixed;
+    top: 75px; /* just below header */
+    left: 0;
+    width: 100%;
+    background-color: white;
     padding: 20px;
-    border-radius: 5px;
     box-shadow: var(--box-shadow);
+    z-index: 999;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  .nav-links.show {
+  .nav-links.active {
     display: flex;
   }
 
   .nav-links li {
     margin: 10px 0;
+    text-align: center;
   }
 
   .hamburger {
@@ -415,6 +418,7 @@ header .container {
   margin-bottom: 10px;
   font-size: 1.1rem;
 }
+
 
 /* Services Section */
 .services-grid {
