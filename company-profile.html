@@ -5,17 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GUNNER Security | Company Profile</title>
     <link rel="stylesheet" href="company-profile.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script defer src="company-profile.js"></script>
+
   </head>
   <body>
-    <section class="company-header">
-      <div class="company-logo">
-        <img src="logo.jpg" alt="GUNNER Logo" />
-        <h1>
-          <span class="blue">GUNNER</span> <span class="orange">Security</span>
-        </h1>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="logo.jpg" alt="GUNNER Security Logo" class="logo-img" />
+          <h1>GUNNER <span>Security</span></h1>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="company-profile.html">Company Profile</a></li>
+            <li><a href="training.html">Training Guards</a></li>
+            <li><a href="our-clients.html">Our Clients</a></li>
+          </ul>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
       </div>
-    </section>
+    </header>
 
     <section class="profile-hero">
       <div class="overlay"></div>
@@ -131,6 +146,7 @@
         </div>
       </div>
     </section>
+    <script src="script.js"></script>
   </body>
 </html>
 
