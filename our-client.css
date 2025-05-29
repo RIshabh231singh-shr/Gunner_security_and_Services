@@ -26,22 +26,7 @@ body {
   margin: auto;
   padding: 0 10px;
 }
-/* Mobile: Only one card visible at a time, scrollable horizontally */
-@media (max-width: 768px) {
-  .clients-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding: 0 10px;
-    gap: 20px;
-  }
 
-  .client-card {
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-  }
-}
 
 .client-card {
   background: #fff;
