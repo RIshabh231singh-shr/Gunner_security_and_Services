@@ -1,0 +1,166 @@
+:root {
+  --primary-color: #0d3b66;
+  --secondary-color: #f95738;
+  --text-color: #333;
+  --bg-color: #f9f9f9;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --transition: 0.4s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding-top: 80px;
+}
+
+header {
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+header h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+/* Section Layout */
+.training-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.training-section h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.training-section p {
+  margin-bottom: 30px;
+  color: #444;
+  font-size: 1rem;
+  max-width: 800px;
+}
+
+/* Photo Grid */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease;
+}
+
+.photo-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* Slide Up Animation */
+.slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-in-out;
+}
+
+.slide-up.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .training-section p {
+    font-size: 0.95rem;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  padding: 50px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Glowing effect on hover */
+main:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6), 0 0 60px rgba(0, 140, 255, 0.4),
+    0 0 90px rgba(0, 140, 255, 0.2);
+}
+main {
+  opacity: 0;
+  transform: translateY(80px);
+  animation: strongSlideUp 1.2s ease-out forwards;
+}
+
+@keyframes strongSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+img {
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Pop-out glow on hover and touch (desktop + mobile) */
+img:hover,
+img:focus,
+img:active {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 140, 255, 0.6),
+    0 0 70px rgba(0, 140, 255, 0.4);
+  z-index: 2;
+}
+
+/* Reveal effect when image scrolls into view */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
