@@ -1,0 +1,101 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+
+.clients-section {
+  padding: 60px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #003366;
+  text-shadow: 0 0 10px rgba(0, 140, 255, 0.5);
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 10px;
+}
+/* Mobile: Only one card visible at a time, scrollable horizontally */
+@media (max-width: 768px) {
+  .clients-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 10px;
+    gap: 20px;
+  }
+
+  .client-card {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+  }
+}
+
+.client-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+}
+
+.client-card img {
+  max-width: 100%;
+  height: auto; /* Maintains aspect ratio */
+  max-height: 300px; /* Increase this for larger display */
+  object-fit: contain;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.client-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 140, 255, 0.5), 0 0 60px rgba(0, 140, 255, 0.3);
+}
+
+.client-card:hover img {
+  transform: scale(1.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.client-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .client-card p {
+    font-size: 0.9rem;
+  }
+}
