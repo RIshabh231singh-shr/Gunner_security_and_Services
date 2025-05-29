@@ -27,7 +27,6 @@ body {
   padding: 0 10px;
 }
 
-
 .client-card {
   background: #fff;
   border-radius: 12px;
@@ -79,6 +78,12 @@ body {
   .section-title {
     font-size: 1.8rem;
   }
+
+  .client-card p {
+    font-size: 0.9rem;
+  }
+}
+
 
   .client-card p {
     font-size: 0.9rem;
